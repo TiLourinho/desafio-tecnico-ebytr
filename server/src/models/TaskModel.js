@@ -8,6 +8,14 @@ const create = async (text) => {
   return registeredTask;
 };
 
+const getAll = async () => {
+  const query = 'SELECT * FROM tasks';
+  const [tasks] = await connection.execute(query);
+
+  return tasks;
+}
+
 module.exports = {
   create,
+  getAll,
 }
