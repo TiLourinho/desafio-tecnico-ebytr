@@ -1,8 +1,8 @@
 const connection = require('./connection');
 
-const create = async (task) => {
+const create = async (text) => {
   const query = 'INSERT INTO tasks (name) VALUES (?);'
-  const task = await connection.execute(query, [task]);
+  const task = await connection.execute(query, [text]);
 
   const registeredTask = { task };
   return registeredTask;
