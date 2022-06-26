@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => (
   <header>
-    <p1>Ebytr</p1>
-    <p2>Task Manager</p2>
+    <h1>Ebytr</h1>
+    <h2>Gerenciador de Tarefas</h2>
   </header>
 );
 
