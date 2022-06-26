@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* @font-face {
+  font-family: paterNoster;
+  src: url('./fonts/paternoster.ttf');
+} */
+
+html {
+  font-family: 'Alegreya', serif;
+  font-size: 16px;
+  max-width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  color: #272526;
+  font-family: 'Alegreya', serif;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ol, ul {
+  list-style: none;
 }
 
-.App-link {
-  color: #61dafb;
+p, p + p {
+  text-indent: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+img {
+  max-width: 100%;
+  height: auto;
 }
