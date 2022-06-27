@@ -1,11 +1,14 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import AppContext from './AppContext';
 
 const Provider = ({ children }) => {
-  const context = useMemo(() => ({
+  const [taskList, setTaskList] = useState([]);
 
-  }), []);
+  const context = useMemo(() => ({
+    taskList,
+    setTaskList,
+  }), [taskList]);
 
   useEffect(() => {
     document.title = 'Ybetr';
