@@ -5,8 +5,7 @@
   },
   "extends": [
     "plugin:react/recommended",
-    "airbnb",
-    "trybe-frontend"
+    "airbnb"
   ],
   "parserOptions": {
     "ecmaFeatures": {
