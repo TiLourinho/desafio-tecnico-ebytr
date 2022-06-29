@@ -4,8 +4,8 @@ Desenvolver um sistema para auxiliar as pessoas colaboradoras da empresa Ebytr a
 
 ## Requisitos Técnicos
 
-- Front-End: React;
-- Back-End: NodeJS e MySQL com arquitetura MSC.
+- Front-End: **React**;
+- Back-End: **NodeJS** e **MySQL** com arquitetura **MSC**.
 
 ## Funcionalidades
 
