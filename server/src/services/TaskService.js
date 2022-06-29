@@ -12,7 +12,14 @@ const getAll = async () => {
   return tasks;
 }
 
+const remove = async (id) => {
+  const task = await TaskModel.remove(id);
+
+  return task;
+}
+
 module.exports = {
   create,
   getAll,
+  remove,
 }
