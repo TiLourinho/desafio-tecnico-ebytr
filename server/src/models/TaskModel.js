@@ -15,7 +15,15 @@ const getAll = async () => {
   return tasks;
 }
 
+const remove = async (id) => {
+  const query = 'DELETE FROM tasks WHERE id = ?';
+  const [task] = await connection.execute(query, [id]);
+
+  return task;
+}
+
 module.exports = {
   create,
   getAll,
+  remove,
 }
