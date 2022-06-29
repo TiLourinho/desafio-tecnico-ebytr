@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
 
-const TaskList = () => {
+const TaskList = ({ onDeleteClick }) => {
   const { taskList } = useContext(AppContext);
 
   return (
@@ -18,7 +18,7 @@ const TaskList = () => {
         <button
           className="input-button"
           type="button"
-          // onClick=""
+          onClick={() => onDeleteClick(elem.id)}
         >
           Remover
         </button>

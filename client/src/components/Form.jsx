@@ -27,6 +27,12 @@ const Form = () => {
     setInput('');
   };
 
+  const onDeleteClick = async (id) => {
+    await axios.delete(`http://localhost:3001/tasks/${id}`);
+
+    getTaskList();
+  };
+
   useEffect(() => {
     getTaskList();
   }, []);
@@ -49,7 +55,7 @@ const Form = () => {
           Adicionar
         </button>
       </form>
-      <TaskList />
+      <TaskList onDeleteClick={onDeleteClick} />
     </section>
   );
 };
