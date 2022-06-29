@@ -22,8 +22,17 @@ const remove = async (id) => {
   return task;
 }
 
+const update = async (id, text) => {
+  const query = 'UPDATE tasks SET name = ? WHERE id = ?';
+  await connection.execute(query, [text, id]);
+  
+  const registeredTask = { text };
+  return registeredTask;
+}
+
 module.exports = {
   create,
   getAll,
   remove,
+  update,
 }
