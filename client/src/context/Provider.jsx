@@ -11,7 +11,7 @@ const Provider = ({ children }) => {
   }), [taskList]);
 
   useEffect(() => {
-    document.title = 'Ybetr';
+    document.title = 'Ebytr';
   }, []);
 
   return (

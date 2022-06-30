@@ -55,7 +55,10 @@ const Form = () => {
           Adicionar
         </button>
       </form>
-      <TaskList onDeleteClick={onDeleteClick} />
+      <TaskList
+        onDeleteClick={onDeleteClick}
+        getTaskList={getTaskList}
+      />
     </section>
   );
 };
