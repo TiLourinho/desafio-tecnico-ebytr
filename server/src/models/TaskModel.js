@@ -22,7 +22,7 @@ const remove = async (id) => {
   return task;
 }
 
-const update = async (id, text) => {
+const updateText = async (id, text) => {
   const query = 'UPDATE tasks SET name = ? WHERE id = ?';
   await connection.execute(query, [text, id]);
   
@@ -30,9 +30,18 @@ const update = async (id, text) => {
   return registeredTask;
 }
 
+const updateType = async (id, type) => {
+  const query = 'UPDATE tasks SET type = ? WHERE id = ?';
+  await connection.execute(query, [type, id]);
+
+  const registeredType = { type };
+  return registeredType;
+}
+
 module.exports = {
   create,
   getAll,
   remove,
-  update,
+  updateText,
+  updateType,
 }

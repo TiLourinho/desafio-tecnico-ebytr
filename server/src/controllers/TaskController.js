@@ -20,10 +20,18 @@ const remove = async (req, res) => {
   return res.status(204).end();
 }
 
-const update = async (req, res) => {
+const updateText = async (req, res) => {
   const { id } = req.params;
   const { text } = req.body;
-  const task = await TaskService.update(id, text);
+  const task = await TaskService.updateText(id, text);
+
+  return res.status(200).json(task);
+}
+
+const updateType = async (req, res) => {
+  const { id } = req.params;
+  const { type } = req.body;
+  const task = await TaskService.updateType(id, type);
 
   return res.status(200).json(task);
 }
@@ -32,5 +40,6 @@ module.exports = {
   create,
   getAll,
   remove,
-  update,
+  updateText,
+  updateType,
 }
