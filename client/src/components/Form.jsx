@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import AppContext from '../context/AppContext';
@@ -47,6 +48,7 @@ const Form = () => {
           name="input-text"
           value={input}
           onChange={handleChange}
+          autoFocus
         />
         <button
           className="input-button"

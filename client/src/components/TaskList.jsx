@@ -2,6 +2,7 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import AppContext from '../context/AppContext';
+import Status from './Status';
 
 const TaskList = ({ onDeleteClick, getTaskList }) => {
   const { taskList } = useContext(AppContext);
@@ -15,17 +16,15 @@ const TaskList = ({ onDeleteClick, getTaskList }) => {
   const onClickUpdate = (id) => (taskId === id ? setTaskId('') : setTaskId(id));
 
   const editTask = async (id) => {
-    await axios.put(`http://localhost:3001/tasks/${id}`, {
+    await axios.put(`http://localhost:3001/tasks/text/${id}`, {
       text: input,
     });
   };
 
   const handleUpdate = async (id) => {
-    [...taskList].map((elem) => {
-      const task = elem;
-
+    [...taskList].map((task) => {
       if (task.id === id) {
-        task.name = input;
+        setInput(task.id);
       }
       return task;
     });
@@ -37,10 +36,10 @@ const TaskList = ({ onDeleteClick, getTaskList }) => {
   };
 
   return (
-    taskList.map((elem) => (
-      <div key={elem.id}>
-        <p>{elem.name}</p>
-        { taskId === elem.id && (
+    taskList.map((task) => (
+      <div key={task.id}>
+        <p>{task.name}</p>
+        { taskId === task.id && (
           <div>
             <input
               className="edit-text"
@@ -54,23 +53,27 @@ const TaskList = ({ onDeleteClick, getTaskList }) => {
             <button
               className="edit-button"
               type="button"
-              onClick={() => handleUpdate(elem.id)}
+              onClick={() => handleUpdate(task.id)}
             >
               Confirmar
             </button>
           </div>
         ) }
+        <Status
+          taskId={task.id}
+          taskType={task.type}
+        />
         <button
           className="input-button"
           type="button"
-          onClick={() => onClickUpdate(elem.id)}
+          onClick={() => onClickUpdate(task.id)}
         >
           Editar
         </button>
         <button
           className="input-button"
           type="button"
-          onClick={() => onDeleteClick(elem.id)}
+          onClick={() => onDeleteClick(task.id)}
         >
           Remover
         </button>
