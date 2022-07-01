@@ -7,6 +7,7 @@ import TaskList from './TaskList';
 const Form = () => {
   const { setTaskList } = useContext(AppContext);
   const [input, setInput] = useState('');
+  const [orderBy, setOrderBy] = useState('');
 
   const getTaskList = async () => {
     const response = await axios.get('http://localhost:3001/tasks');
@@ -16,6 +17,11 @@ const Form = () => {
 
   const handleChange = ({ target }) => {
     setInput(target.value);
+  };
+
+  const handleSelect = ({ target }) => {
+    setOrderBy(target.value);
+    getTaskList();
   };
 
   const handleSubmit = async (event) => {
@@ -32,6 +38,13 @@ const Form = () => {
     await axios.delete(`http://localhost:3001/tasks/${id}`);
 
     getTaskList();
+  };
+
+  const handleFilter = (a, b) => {
+    if (a[orderBy] < b[orderBy]) return -1;
+    if (a[orderBy] > b[orderBy]) return 1;
+
+    return 0;
   };
 
   useEffect(() => {
@@ -57,9 +70,16 @@ const Form = () => {
           Adicionar
         </button>
       </form>
+      <select value={orderBy} onChange={handleSelect}>
+        <option value="">Escolha um filtro</option>
+        <option value="name">A-Z</option>
+        <option value="register_date">Data</option>
+        <option value="type">Status</option>
+      </select>
       <TaskList
         onDeleteClick={onDeleteClick}
         getTaskList={getTaskList}
+        handleFilter={handleFilter}
       />
     </section>
   );

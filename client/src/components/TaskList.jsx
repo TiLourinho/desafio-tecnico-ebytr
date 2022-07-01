@@ -4,7 +4,7 @@ import axios from 'axios';
 import AppContext from '../context/AppContext';
 import Status from './Status';
 
-const TaskList = ({ onDeleteClick, getTaskList }) => {
+const TaskList = ({ onDeleteClick, getTaskList, handleFilter }) => {
   const { taskList } = useContext(AppContext);
   const [input, setInput] = useState('');
   const [taskId, setTaskId] = useState('');
@@ -36,7 +36,7 @@ const TaskList = ({ onDeleteClick, getTaskList }) => {
   };
 
   return (
-    taskList.map((task) => (
+    taskList.sort(handleFilter).map((task) => (
       <div key={task.id}>
         <p>{task.name}</p>
         { taskId === task.id && (
