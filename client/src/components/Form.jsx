@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
 import AppContext from '../context/AppContext';
 import TaskList from './TaskList';
+import { getTasks, postTasks, deleteTasks } from '../helpers/connectors';
 
 const Form = () => {
   const { setTaskList } = useContext(AppContext);
@@ -10,14 +10,16 @@ const Form = () => {
   const [orderBy, setOrderBy] = useState('');
 
   const getTaskList = async () => {
-    const response = await axios.get('http://localhost:3001/tasks');
+    const response = await getTasks();
 
-    setTaskList(response.data);
+    setTaskList(response);
   };
 
-  const handleChange = ({ target }) => {
-    setInput(target.value);
-  };
+  useEffect(() => {
+    getTaskList();
+  }, []);
+
+  const handleChange = ({ target }) => setInput(target.value);
 
   const handleSelect = ({ target }) => {
     setOrderBy(target.value);
@@ -25,17 +27,16 @@ const Form = () => {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    await axios.post('http://localhost:3001/tasks', {
-      text: input,
-    });
+    const body = { text: input };
 
+    event.preventDefault();
+    await postTasks(body);
     getTaskList();
     setInput('');
   };
 
   const onDeleteClick = async (id) => {
-    await axios.delete(`http://localhost:3001/tasks/${id}`);
+    await deleteTasks(id);
 
     getTaskList();
   };
@@ -47,13 +48,12 @@ const Form = () => {
     return 0;
   };
 
-  useEffect(() => {
-    getTaskList();
-  }, []);
-
   return (
     <section>
-      <form className="form" onSubmit={handleSubmit}>
+      <form
+        className="form"
+        onSubmit={handleSubmit}
+      >
         <input
           className="input-text"
           type="text"
@@ -70,11 +70,14 @@ const Form = () => {
           Adicionar
         </button>
       </form>
-      <select value={orderBy} onChange={handleSelect}>
+      <select
+        value={orderBy}
+        onChange={handleSelect}
+      >
         <option value="">Escolha um filtro</option>
         <option value="name">A-Z</option>
         <option value="register_date">Data</option>
-        <option value="type">Status</option>
+        <option value="status">Status</option>
       </select>
       <TaskList
         onDeleteClick={onDeleteClick}
