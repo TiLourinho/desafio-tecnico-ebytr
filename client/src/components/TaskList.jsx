@@ -1,34 +1,27 @@
 /* eslint-disable jsx-a11y/no-autofocus */
 import React, { useContext, useState } from 'react';
-import axios from 'axios';
 import AppContext from '../context/AppContext';
 import Status from './Status';
+import { putTasksNames } from '../helpers/connectors';
 
 const TaskList = ({ onDeleteClick, getTaskList, handleFilter }) => {
   const { taskList } = useContext(AppContext);
   const [input, setInput] = useState('');
   const [taskId, setTaskId] = useState('');
 
-  const handleChange = ({ target }) => {
-    setInput(target.value);
-  };
+  const handleChange = ({ target }) => setInput(target.value);
 
-  const onClickUpdate = (id) => (taskId === id ? setTaskId('') : setTaskId(id));
+  const onClickUpdate = (id, text) => (
+    taskId === id ? (setTaskId(''), setInput('')) : (setTaskId(id), setInput(text))
+  );
 
   const editTask = async (id) => {
-    await axios.put(`http://localhost:3001/tasks/text/${id}`, {
-      text: input,
-    });
+    const body = { text: input };
+
+    await putTasksNames(id, body);
   };
 
   const handleUpdate = async (id) => {
-    [...taskList].map((task) => {
-      if (task.id === id) {
-        setInput(task.id);
-      }
-      return task;
-    });
-
     await editTask(id);
     setInput('');
     setTaskId('');
@@ -61,12 +54,12 @@ const TaskList = ({ onDeleteClick, getTaskList, handleFilter }) => {
         ) }
         <Status
           taskId={task.id}
-          taskType={task.type}
+          taskStatus={task.status}
         />
         <button
           className="input-button"
           type="button"
-          onClick={() => onClickUpdate(task.id)}
+          onClick={() => onClickUpdate(task.id, task.name)}
         >
           Editar
         </button>

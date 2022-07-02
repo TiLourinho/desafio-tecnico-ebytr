@@ -1,26 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import { putTasksStatus } from '../helpers/connectors';
 
-const Status = ({ taskId, taskType }) => {
-  const [type, setType] = useState(taskType);
+const Status = ({ taskId, taskStatus }) => {
+  const [status, setStatus] = useState(taskStatus);
 
-  const editType = async (id) => {
-    await axios.put(`http://localhost:3001/tasks/type/${id}`, {
-      type,
-    });
-  };
+  const handleChange = (event) => setStatus(event.target.value);
 
-  const handleChange = (event) => {
-    setType(event.target.value);
+  const editStatus = async (id) => {
+    const body = { status };
+
+    await putTasksStatus(id, body);
   };
 
   useEffect(() => {
-    editType(taskId, taskType);
-  }, [type]);
+    editStatus(taskId, taskStatus);
+  }, [status]);
 
   return (
-    <select value={type} onChange={handleChange}>
+    <select
+      value={status}
+      onChange={handleChange}
+    >
       <option value="">Escolha um status</option>
       <option value="Pendente">Pendente</option>
       <option value="Em andamento">Em andamento</option>
@@ -30,8 +31,8 @@ const Status = ({ taskId, taskType }) => {
 };
 
 Status.propTypes = {
-  task: PropTypes.number,
-  taskType: PropTypes.string,
+  taskId: PropTypes.number,
+  taskStatus: PropTypes.string,
 }.isRequired;
 
 export default Status;
