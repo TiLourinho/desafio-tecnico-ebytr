@@ -30,11 +30,11 @@ const updateText = async (id, text) => {
   return registeredTask;
 }
 
-const updateType = async (id, type) => {
-  const query = 'UPDATE tasks SET type = ? WHERE id = ?';
-  await connection.execute(query, [type, id]);
+const updateType = async (id, status) => {
+  const query = 'UPDATE tasks SET status = ? WHERE id = ?';
+  await connection.execute(query, [status, id]);
 
-  const registeredType = { type };
+  const registeredType = { status };
   return registeredType;
 }
 

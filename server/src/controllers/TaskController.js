@@ -30,8 +30,8 @@ const updateText = async (req, res) => {
 
 const updateType = async (req, res) => {
   const { id } = req.params;
-  const { type } = req.body;
-  const task = await TaskService.updateType(id, type);
+  const { status } = req.body;
+  const task = await TaskService.updateType(id, status);
 
   return res.status(200).json(task);
 }
