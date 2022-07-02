@@ -38,7 +38,7 @@ const TaskList = ({ onDeleteClick, getTaskList, handleFilter }) => {
               className="edit-text"
               type="text"
               placeholder="Edite esta tarefa"
-              name="input-text"
+              name="edit-text"
               value={input}
               onChange={handleChange}
               autoFocus
