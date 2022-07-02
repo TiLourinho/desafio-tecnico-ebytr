@@ -24,8 +24,8 @@ const updateText = async (id, text) => {
   return task;
 }
 
-const updateType = async (id, type) => {
-  const task = await TaskModel.updateType(id, type);
+const updateType = async (id, status) => {
+  const task = await TaskModel.updateType(id, status);
 
   return task;
 }
