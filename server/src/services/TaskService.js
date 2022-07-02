@@ -14,7 +14,7 @@ const getAll = async () => {
 
 const remove = async (id) => {
   const task = await TaskModel.remove(id);
-
+  
   return task;
 }
 
@@ -24,8 +24,8 @@ const updateText = async (id, text) => {
   return task;
 }
 
-const updateType = async (id, status) => {
-  const task = await TaskModel.updateType(id, status);
+const updateStatus = async (id, status) => {
+  const task = await TaskModel.updateStatus(id, status);
 
   return task;
 }
@@ -35,5 +35,5 @@ module.exports = {
   getAll,
   remove,
   updateText,
-  updateType,
+  updateStatus,
 }
