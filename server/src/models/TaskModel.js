@@ -30,7 +30,7 @@ const updateText = async (id, text) => {
   return registeredTask;
 }
 
-const updateType = async (id, status) => {
+const updateStatus = async (id, status) => {
   const query = 'UPDATE tasks SET status = ? WHERE id = ?';
   await connection.execute(query, [status, id]);
 
@@ -43,5 +43,5 @@ module.exports = {
   getAll,
   remove,
   updateText,
-  updateType,
+  updateStatus,
 }

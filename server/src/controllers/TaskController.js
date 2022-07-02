@@ -17,7 +17,7 @@ const remove = async (req, res) => {
   const { id } = req.params;
   await TaskService.remove(id);
 
-  return res.status(204).end();
+  return res.status(204).json({ message: 'Tarefa removida' });
 }
 
 const updateText = async (req, res) => {
@@ -28,10 +28,10 @@ const updateText = async (req, res) => {
   return res.status(200).json(task);
 }
 
-const updateType = async (req, res) => {
+const updateStatus = async (req, res) => {
   const { id } = req.params;
   const { status } = req.body;
-  const task = await TaskService.updateType(id, status);
+  const task = await TaskService.updateStatus(id, status);
 
   return res.status(200).json(task);
 }
@@ -41,5 +41,5 @@ module.exports = {
   getAll,
   remove,
   updateText,
-  updateType,
+  updateStatus,
 }
