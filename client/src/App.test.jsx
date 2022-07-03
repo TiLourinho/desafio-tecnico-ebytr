@@ -1,12 +1,17 @@
 /* eslint-disable no-undef */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-// import Header from './components/Header';
-// import Form from './components/Form';
+import {
+  render, cleanup, screen, waitFor, waitForElementToBeRemoved,
+} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
 beforeEach(() => {
   render(<App />);
+});
+
+afterEach(() => {
+  cleanup();
 });
 
 describe('Home page', () => {
@@ -36,6 +41,32 @@ describe('Home page', () => {
     it('tests if "Form" has a select containing "Escolha um filtro"', () => {
       const select = screen.getByText('Escolha um filtro');
       expect(select).toBeInTheDocument();
+    });
+
+    it('tests if adding a task it will be rendered', async () => {
+      const input = screen.getByPlaceholderText('Adicione uma tarefa');
+      userEvent.type(input, 'Teste');
+
+      const button = await screen.findByRole('button', { name: /Adicionar/i });
+      userEvent.click(button);
+
+      const paragraph = await screen.findByText('Teste');
+      await waitFor(() => expect(paragraph).toBeInTheDocument());
+    });
+
+    it('tests if a task can be removed when "Remover" button is clicked', async () => {
+      const input = screen.getByPlaceholderText('Adicione uma tarefa');
+      userEvent.type(input, 'Teste');
+
+      const button = await screen.findByRole('button', { name: /Adicionar/i });
+      userEvent.click(button);
+
+      const removeButton = await screen.findByRole('button', { name: /Remover/i });
+      userEvent.click(removeButton);
+
+      const paragraph = await screen.findByText('Teste');
+      await waitForElementToBeRemoved(paragraph);
+      await waitFor(() => expect(paragraph).not.toBeInTheDocument());
     });
   });
 });
