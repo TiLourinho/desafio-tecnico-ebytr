@@ -50,10 +50,7 @@ const Form = () => {
 
   return (
     <section>
-      <form
-        className="form"
-        onSubmit={handleSubmit}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           className="input-text"
           type="text"
@@ -61,6 +58,7 @@ const Form = () => {
           name="input-text"
           value={input}
           onChange={handleChange}
+          spellCheck="false"
           autoFocus
         />
         <button
@@ -70,15 +68,17 @@ const Form = () => {
           Adicionar
         </button>
       </form>
-      <select
-        value={orderBy}
-        onChange={handleSelect}
-      >
-        <option value="">Escolha um filtro</option>
-        <option value="name">A-Z</option>
-        <option value="register_date">Data</option>
-        <option value="status">Status</option>
-      </select>
+      <div className="input-select">
+        <select
+          value={orderBy}
+          onChange={handleSelect}
+        >
+          <option value="">Escolha um filtro</option>
+          <option value="name">A-Z</option>
+          <option value="register_date">Data</option>
+          <option value="status">Status</option>
+        </select>
+      </div>
       <TaskList
         onDeleteClick={onDeleteClick}
         getTaskList={getTaskList}

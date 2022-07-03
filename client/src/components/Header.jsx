@@ -1,8 +1,9 @@
 import React from 'react';
+import ebytr from '../images/ebytr-logo.png';
 
 const Header = () => (
   <header>
-    <h1>Ebytr</h1>
+    <img src={ebytr} alt="Ebytr logo" width="230" />
     <h2>Gerenciador de Tarefas</h2>
   </header>
 );
