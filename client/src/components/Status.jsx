@@ -19,10 +19,11 @@ const Status = ({ taskId, taskStatus }) => {
 
   return (
     <select
+      className="edit-select"
       value={status}
       onChange={handleChange}
     >
-      <option value="">Escolha um status</option>
+      {/* <option value="">Escolha um status</option> */}
       <option value="Pendente">Pendente</option>
       <option value="Em andamento">Em andamento</option>
       <option value="Pronto">Pronto</option>

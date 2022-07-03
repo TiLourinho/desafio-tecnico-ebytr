@@ -30,46 +30,53 @@ const TaskList = ({ onDeleteClick, getTaskList, handleFilter }) => {
 
   return (
     taskList.sort(handleFilter).map((task) => (
-      <div key={task.id}>
-        <p>{task.name}</p>
-        { taskId === task.id && (
+      <div key={task.id} className="task-list">
+        <div>
+          <p>{task.name}</p>
+          <div className="edit-task">
+            { taskId === task.id && (
+              <form>
+                <input
+                  className="edit-input"
+                  type="text"
+                  placeholder="Edite esta tarefa"
+                  name="edit-text"
+                  value={input}
+                  onChange={handleChange}
+                  spellCheck="false"
+                  autoFocus
+                />
+                <button
+                  className="edit-button"
+                  type="button"
+                  onClick={() => handleUpdate(task.id)}
+                >
+                  Confirmar
+                </button>
+              </form>
+            ) }
+          </div>
           <div>
-            <input
-              className="edit-text"
-              type="text"
-              placeholder="Edite esta tarefa"
-              name="edit-text"
-              value={input}
-              onChange={handleChange}
-              autoFocus
+            <Status
+              taskId={task.id}
+              taskStatus={task.status}
             />
             <button
-              className="edit-button"
+              className="task-button"
               type="button"
-              onClick={() => handleUpdate(task.id)}
+              onClick={() => onClickUpdate(task.id, task.name)}
             >
-              Confirmar
+              Editar
+            </button>
+            <button
+              className="task-button"
+              type="button"
+              onClick={() => onDeleteClick(task.id)}
+            >
+              Remover
             </button>
           </div>
-        ) }
-        <Status
-          taskId={task.id}
-          taskStatus={task.status}
-        />
-        <button
-          className="input-button"
-          type="button"
-          onClick={() => onClickUpdate(task.id, task.name)}
-        >
-          Editar
-        </button>
-        <button
-          className="input-button"
-          type="button"
-          onClick={() => onDeleteClick(task.id)}
-        >
-          Remover
-        </button>
+        </div>
       </div>
     ))
   );
