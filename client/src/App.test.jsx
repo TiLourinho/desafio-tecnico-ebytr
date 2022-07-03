@@ -16,9 +16,9 @@ afterEach(() => {
 
 describe('Home page', () => {
   describe('Header component', () => {
-    it('tests if "Header" has a h1 containing "Ebytr"', () => {
-      const title = screen.getByRole('heading', { level: 1, name: /Ebytr/i });
-      expect(title).toBeInTheDocument();
+    it('tests if "Header" has an image of Ebytr logo', () => {
+      const img = screen.getByAltText('Ebytr logo');
+      expect(img).toBeInTheDocument();
     });
 
     it('tests if "Header" has a h2 containing "Gerenciador de Tarefas"', () => {
