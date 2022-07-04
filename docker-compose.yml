@@ -4,33 +4,35 @@ services:
   backend:
     build: ./server
     container_name: app_backend
+    stdin_open: true
+    tty: true
     ports:
-      - "3001:3001"
+      - 3001:3001
     volumes:
       - ./server:/app/server
     environment:
-      - MYSQL_HOST=172.17.0.2
+      - MYSQL_HOST=database
       - MYSQL_USER=root
       - MYSQL_PASSWORD=root
       - MYSQL_DATABASE=TaskManager
       - PORT=3001
     depends_on:
-      - mysql
+      - database
 
   frontend:
     build: ./client
     container_name: app_frontend
     ports:
-      - "3000:3000"
+      - 3000:3000
     volumes:
       - ./client:/app/client
     command: npm start
 
-  mysql:
+  database:
     image: mysql:8.0.21
     container_name: mysql_db
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=root
     restart: always
