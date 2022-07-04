@@ -10,4 +10,4 @@ COPY . /app/server
 
 EXPOSE 3001
 
-CMD ["npm", "run", "debug"]
+CMD ["npm", "start"]
