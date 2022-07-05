@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center" width="20%">
   <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-logo.png" alt="Ebytr logo">
 </p>
 
