@@ -2,6 +2,14 @@
   <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-logo.png" alt="Ebytr logo">
 </p>
 
+<p align="center">
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-demonstração">Demonstração</a> • 
+ <a href="#-como-executar-o-projeto">Como executar</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
+ <a href="#-autor">Autor</a>
+</p>
+
 <h1 align="center">Gerenciador de Tarefas Ebytr</h1>
 
 Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar as pessoas colaboradoras a se organizarem melhor e terem mais produtividade.
@@ -111,14 +119,15 @@ A aplicação estará rodando no endereço: http://localhost:3000
 
 As seguintes tecnologias foram utilizadas neste projeto:
 
--[React](https://pt-br.reactjs.org/)
--[NodeJS](https://nodejs.org/en/)
--[Express](https://expressjs.com/pt-br/)
--[MySQL](https://www.mysql.com/)
--[Docker](https://www.docker.com/)
--[Heroku](https://dashboard.heroku.com/apps)
+- [React](https://pt-br.reactjs.org/)
+- [NodeJS](https://nodejs.org/en/)
+- [Express](https://expressjs.com/pt-br/)
+- [MySQL](https://www.mysql.com/)
+- [Docker](https://www.docker.com/)
+- [Heroku](https://dashboard.heroku.com/apps)
 
 ## Autor
 
 [Tiago Lourinho](https://github.com/TiLourinho)
+
 [![Gmail Badge](https://img.shields.io/badge/-lourinho.tiago@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lourinho.tiago@gmail.com)](mailto:lourinho.tiago@gmail.com)
