@@ -77,21 +77,32 @@ $ cd ..
 ##### Docker
 
 ```bash
-# Para iniciar o Docker e rodar tanto o Backend quanto o Frontend, use o seguinte comando
+# Para iniciar o Docker e rodar tanto o Backend quanto o Frontend, use o seguinte comando:
 $ docker-compose up --build -d
 
-# Para parar o Docker, use
+# Para parar o Docker, use:
 $ docker-compose stop
 ```
 
 ##### MySQL Workbench
 
-```bash
-# Com o MySQL instalado agora é preciso manipular
-$ docker-compose up --build -d
+```mysql
+# Faça uma conexão nova com as seguintes informações:
+# Port: 3306, Username: root, Password: root
 
-# Para parar o Docker, use
-$ docker-compose stop
+# Rode o seguinte script para a criação do banco de dados:
+DROP DATABASE IF EXISTS TaskManager;
+
+CREATE DATABASE TaskManager;
+
+USE TaskManager;
+
+CREATE TABLE tasks (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(150) NOT NULL,
+    status VARCHAR(15) NOT NULL DEFAULT 'Pendente',
+    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE = InnoDB;
 ```
 
 ## Requisitos Técnicos
