@@ -2,9 +2,11 @@
   <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-logo.png" alt="Ebytr logo">
 </p>
 
-# Desafio Técnico Ebytr
+<h1 align="center">Gerenciador de Tarefas Ebytr</h1>
 
-Desenvolver um sistema para auxiliar as pessoas colaboradoras da empresa Ebytr a se organizar e ter mais produtividade.
+Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar as pessoas colaboradoras a se organizarem melhor e terem mais produtividade.
+
+<h4 align="center">Em construção!!!</h4>
 
 ## Requisitos Técnicos
 
