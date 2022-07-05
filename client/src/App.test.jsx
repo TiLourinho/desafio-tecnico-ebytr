@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import React from 'react';
+import '@testing-library/jest-dom';
 import {
   render, cleanup, screen, waitFor, waitForElementToBeRemoved,
 } from '@testing-library/react';
