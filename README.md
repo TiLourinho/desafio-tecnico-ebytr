@@ -35,12 +35,64 @@ O projeto é dividido em duas partes:
 1. Backend (pasta **server**);
 2. Frontend (pasta **client**).
 
-O Backend precisa estar sendo executado para o Frontend ser funcional.
-
 ### Pré-requisitos
 
 Para rodar o projeto em sua máquina, você precisa ter instalado as seguintes ferramentas: [Docker](https://docs.docker.com/get-docker/), [MySQL](https://dev.mysql.com/downloads/mysql/) e preferencialmente o [MySQL Workbench](https://dev.mysql.com/downloads/workbench/).
 Além disso é aconselhável ter um editor, para manipular o código, como o [VSCode](https://code.visualstudio.com/download).
+
+#### Rodando a aplicação
+
+##### Backend
+
+```bash
+# Clone este repositório
+$ git@github.com:TiLourinho/desafio-tecnico-ebytr.git
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd desafio-tecnico-ebytr
+
+# Vá para a pasta da aplicação Backend
+$ cd server
+
+# Instale as dependências
+$ npm install
+
+# Volte à pasta raiz
+$ cd ..
+```
+
+##### Frontend
+
+```bash
+# Vá para a pasta da aplicação Frontend
+$ cd client
+
+# Instale as dependências
+$ npm install
+
+# Volte à pasta raiz
+$ cd ..
+```
+
+##### Docker
+
+```bash
+# Para iniciar o Docker e rodar tanto o Backend quanto o Frontend, use o seguinte comando
+$ docker-compose up --build -d
+
+# Para parar o Docker, use
+$ docker-compose stop
+```
+
+##### MySQL Workbench
+
+```bash
+# Com o MySQL instalado agora é preciso manipular
+$ docker-compose up --build -d
+
+# Para parar o Docker, use
+$ docker-compose stop
+```
 
 ## Requisitos Técnicos
 
