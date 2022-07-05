@@ -8,15 +8,17 @@ Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar a
 
 <h4 align="center">Em construção!!!</h4>
 
-## Requisitos Técnicos
-
-- Front-End: **React**;
-- Back-End: **NodeJS** e **MySQL** com arquitetura **MSC**.
-
 ## Funcionalidades
 
 - Visualizar a lista de tarefas que pode ser ordenada alfabeticamente, por data de criação ou por status;
 - Inserir uma nova tarefa na lista;
 - Remover uma tarefa da lista;
-- Atualizar uma tarefa da lista;
-- A tarefa deve possuir um status editável: pendente, em andamento ou pronto.
+- Editar uma tarefa da lista;
+- Mudar o status da tarefa, que por padrão é _pendente_, para _em andamento_ ou _pronto_.
+
+## Requisitos Técnicos
+
+- Front-End: **React**;
+- Back-End: **NodeJS** e **MySQL** com arquitetura **MSC**.
+
+
