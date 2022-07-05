@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-logo.png" alt="Ebytr logo">
+</p>
+
 # Desafio Técnico Ebytr
 
 Desenvolver um sistema para auxiliar as pessoas colaboradoras da empresa Ebytr a se organizar e ter mais produtividade.
