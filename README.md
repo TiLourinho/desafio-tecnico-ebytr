@@ -105,9 +105,20 @@ CREATE TABLE tasks (
 ) ENGINE = InnoDB;
 ```
 
-## Requisitos Técnicos
+A aplicação estará rodando no endereço: http://localhost:3000
 
-- Front-End: **React**;
-- Back-End: **NodeJS** e **MySQL** com arquitetura **MSC**.
+## Tecnologias
 
+As seguintes tecnologias foram utilizadas neste projeto:
 
+-[React](https://pt-br.reactjs.org/)
+-[NodeJS](https://nodejs.org/en/)
+-[Express](https://expressjs.com/pt-br/)
+-[MySQL](https://www.mysql.com/)
+-[Docker](https://www.docker.com/)
+-[Heroku](https://dashboard.heroku.com/apps)
+
+## Autor
+
+[Tiago Lourinho](https://github.com/TiLourinho)
+[![Gmail Badge](https://img.shields.io/badge/-lourinho.tiago@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:lourinho.tiago@gmail.com)](mailto:lourinho.tiago@gmail.com)
