@@ -18,10 +18,10 @@ Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar a
 
 ## Demonstração
 
-<p align="center>
+<p align="center width="40%">
   <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-01.png" alt="Gerenciador de Tarefas sem tarefas registradas">
 </p>
-<p align="center>
+<p align="center width="40%">
   <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-02.png" alt="Gerenciador de Tarefas com algumas tarefas registradas">
 </p>
 
