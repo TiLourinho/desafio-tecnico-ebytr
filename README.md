@@ -16,6 +16,15 @@ Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar a
 - Editar uma tarefa da lista;
 - Mudar o status da tarefa, que por padrão é _pendente_, para _em andamento_ ou _pronto_.
 
+## Demonstração
+
+<p align="center>
+  <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-01.png" alt="Gerenciador de Tarefas sem tarefas registradas">
+</p>
+<p align="center>
+  <img src="https://github.com/TiLourinho/desafio-tecnico-ebytr/blob/main/client/src/images/ebytr-02.png" alt="Gerenciador de Tarefas com algumas tarefas registradas">
+</p>
+
 ## Requisitos Técnicos
 
 - Front-End: **React**;
