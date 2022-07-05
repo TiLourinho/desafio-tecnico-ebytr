@@ -14,8 +14,6 @@
 
 Um Gerenciador de Tarefas foi desenvolvido para a empresa Ebytr, para auxiliar as pessoas colaboradoras a se organizarem melhor e terem mais produtividade.
 
-<h4 align="center">Em construção!!!</h4>
-
 ## Funcionalidades
 
 - Visualizar a lista de tarefas que pode ser ordenada alfabeticamente, por data de criação ou por status;
