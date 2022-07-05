@@ -3,11 +3,11 @@
 </p>
 
 <p align="center">
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-demonstração">Demonstração</a> • 
- <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-tecnologias">Tecnologias</a> • 
- <a href="#-autor">Autor</a>
+ <a href="#funcionalidades">Funcionalidades</a> •
+ <a href="#demonstração">Demonstração</a> • 
+ <a href="#como-executar-o-projeto">Como executar</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#autor">Autor</a>
 </p>
 
 <h1 align="center">Gerenciador de Tarefas Ebytr</h1>
